@@ -74,7 +74,7 @@ ORDER BY category, rank_in_category;
 
 ---
 
-To track monthly business growth and seasonality, we truncated timestamps to monthly aggregates:
+### 4. To track monthly business growth and seasonality, we truncated timestamps to monthly aggregates:
 
 SELECT 
   TIMESTAMP_TRUNC(created_at, MONTH) AS sales_month,
