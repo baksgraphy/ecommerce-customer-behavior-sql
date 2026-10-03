@@ -40,6 +40,7 @@ JOIN `bigquery-public-data.thelook_ecommerce.users` AS u
 WHERE oi.status = 'Complete'
 GROUP BY age_group
 ORDER BY total_revenue DESC;
+```
 
 ### 3. Top Products per Category (`DENSE_RANK()`)
 Using window functions, we ranked the top revenue-generating items within each product category:
