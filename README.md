@@ -41,6 +41,8 @@ WHERE oi.status = 'Complete'
 GROUP BY age_group
 ORDER BY total_revenue DESC;
 
+---
+
 * **Insight:** The **35-54 (Adults)** group generated the highest revenue ($916,642.78), closely followed by **55+ (Seniors)** ($736,090.58). Higher order volume in mature age groups drives total earnings.
 
 ---
@@ -70,7 +72,10 @@ FROM CategorySales
 WHERE rank_in_category <= 3
 ORDER BY category, rank_in_category;
 
+---
+
 To track monthly business growth and seasonality, we truncated timestamps to monthly aggregates:
+
 SELECT 
   TIMESTAMP_TRUNC(created_at, MONTH) AS sales_month,
   COUNT(DISTINCT order_id) AS total_orders,
@@ -80,6 +85,9 @@ WHERE status = 'Complete'
 GROUP BY sales_month
 ORDER BY sales_month DESC
 LIMIT 12;
+
+---
+
 Insight: August and September consistently show peak order volume ($180k+ revenue in Sept), indicating strong late-summer demand before Q4.
 
 💡 Strategic Business Recommendations
