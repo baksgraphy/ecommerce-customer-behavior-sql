@@ -71,11 +71,14 @@ SELECT
 FROM CategorySales
 WHERE rank_in_category <= 3
 ORDER BY category, rank_in_category;
+```
 
----
+* **Insight:** Key hero products include *Oakley Men's Racing Jacket Oval Sunglasses* (Accessories) and *adidas Women's adiFIT Slim Pants* (Activewear).
 
-### 4. To track monthly business growth and seasonality, we truncated timestamps to monthly aggregates:
+### 4. Monthly Revenue Trends & Seasonality
+To track monthly business growth and seasonality, we truncated timestamps to monthly aggregates:
 
+```sql
 SELECT 
   TIMESTAMP_TRUNC(created_at, MONTH) AS sales_month,
   COUNT(DISTINCT order_id) AS total_orders,
@@ -85,8 +88,13 @@ WHERE status = 'Complete'
 GROUP BY sales_month
 ORDER BY sales_month DESC
 LIMIT 12;
+```
+
+* **Insight:** August and September consistently show peak order volume ($180k+ revenue in Sept), indicating strong late-summer demand before Q4.
 
 ---
+
+
 
 Insight: August and September consistently show peak order volume ($180k+ revenue in Sept), indicating strong late-summer demand before Q4.
 
