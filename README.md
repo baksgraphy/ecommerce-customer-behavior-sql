@@ -41,12 +41,6 @@ WHERE oi.status = 'Complete'
 GROUP BY age_group
 ORDER BY total_revenue DESC;
 
----
-
-* **Insight:** The **35-54 (Adults)** group generated the highest revenue ($916,642.78), closely followed by **55+ (Seniors)** ($736,090.58). Higher order volume in mature age groups drives total earnings.
-
----
-
 ### 3. Top Products per Category (`DENSE_RANK()`)
 Using window functions, we ranked the top revenue-generating items within each product category:
 
@@ -91,12 +85,6 @@ LIMIT 12;
 ```
 
 * **Insight:** August and September consistently show peak order volume ($180k+ revenue in Sept), indicating strong late-summer demand before Q4.
-
----
-
-
-
-Insight: August and September consistently show peak order volume ($180k+ revenue in Sept), indicating strong late-summer demand before Q4.
 
 💡 Strategic Business Recommendations
 Targeted Demographics: Focus promotional ad spend on 35+ demographics, as mature customers represent the largest volume of high-value purchases.
